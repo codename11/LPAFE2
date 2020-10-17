@@ -10,8 +10,7 @@ class CreatePost extends Component {
         super(props);
 
         this.state = {
-            title: "",
-            body: ""
+
         }
         this.onSubmit = this.onSubmit.bind(this);
         this.onChange = this.onChange.bind(this);
@@ -39,23 +38,25 @@ class CreatePost extends Component {
     }
 
     render() {
+        
         return (
- 
-            <form onSubmit={this.onSubmit}>
+            <div className="container">
+                <h3>Create</h3>
+                <form onSubmit={this.onSubmit}>
 
-                <div className="form-group">
-                    <label htmlFor="title">Title:</label>
-                    <input type="text" className="form-control" name="title" id="title" onChange={this.onChange} required/>
-                </div>
+                    <div className="form-group">
+                        <label htmlFor="title">Title:</label>
+                        <input type="text" className="form-control" name="title" id="title" onChange={this.onChange} required/>
+                    </div>
 
-                <div className="form-group">
-                    <label htmlFor="body">Body:</label>
-                    <textarea className="form-control" rows="5" name="body" id="body" onChange={this.onChange} required></textarea>
-                </div>
+                    <div className="form-group">
+                        <label htmlFor="body">Body:</label>
+                        <textarea className="form-control" rows="5" name="body" id="body" onChange={this.onChange} required></textarea>
+                    </div>
 
-                <input className="btn btn-outline-primary" type="submit" value="Submit" />
-            </form>
-
+                    <input className="btn btn-outline-primary" type="submit" value="Submit" />
+                </form>
+            </div>
         )
     }
 }

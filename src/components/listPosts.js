@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import {connect} from "react-redux";
 import {listPosts} from "../actions/postActions";
 import PropTypes from "prop-types";
-import store from "../store";
 
 class ListPosts extends Component {
 
@@ -26,7 +25,8 @@ class ListPosts extends Component {
         }) : null;
 
         return (
-            <div>
+            <div className="container">
+                <h3>List</h3>
                 {posts}
             </div>
         );

@@ -1,4 +1,4 @@
-import { FETCH_POSTS, NEW_POST, SHOW_POST } from "../actions/types";
+import { FETCH_POSTS, NEW_POST, SHOW_POST, UPDATE_POST } from "../actions/types";
 
 const initialState = {
     data: {
@@ -56,6 +56,26 @@ export default function(state = initialState, action){
                 data: {
                     message: action.payload.message,
                     showPost: showPost,
+                    posts: [...posts],
+                }
+            };
+
+            return myState;
+
+        case UPDATE_POST:
+        
+            let updatedPost = action.payload.post;
+            let message = action.payload.message;
+            
+            posts = state.data && state.data.posts && state.data.posts.length > 0 ? state.data.posts.map((item, i) => {
+
+                return item.id === updatedPost.id ? updatedPost : item;
+
+            }) : null;
+
+            myState = {
+                data: {
+                    message: message,
                     posts: [...posts],
                 }
             };

@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import {connect} from "react-redux";
 import {showPost} from "../actions/postActions";
 import PropTypes from "prop-types";
-import store from "../store";
 
 class ShowPost extends Component {
 
@@ -14,7 +13,6 @@ class ShowPost extends Component {
             name: null,
             value: null
         };
-        //this.props.listPosts();
         this.onChange = this.onChange.bind(this);
     }
 
@@ -29,7 +27,6 @@ class ShowPost extends Component {
     }
 
     render() {
-        console.log(this.props);
         
         let posts = this.props.data.posts;
         let options = posts && posts.length>0 ? posts.map((item, i) => {
@@ -51,7 +48,7 @@ class ShowPost extends Component {
         
         return (
             <div className="container">
-
+                <h3>Show</h3>
                 {select}
                 {post}
 
