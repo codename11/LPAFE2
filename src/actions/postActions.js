@@ -1,4 +1,4 @@
-import { FETCH_POSTS, NEW_POST, SHOW_POST, UPDATE_POST } from "./types";
+import { FETCH_POSTS, NEW_POST, SHOW_POST, UPDATE_POST, DELETE_POST } from "./types";
 
 export const listPosts = () => dispatch => {
     
@@ -56,7 +56,7 @@ export const createPost = (data) => dispatch => {
 
 }
 
-export const showPost = (num) => dispatch => {
+export const showPost = (num, comp) => dispatch => {
     
     let url = "http://LaravelPassportApi.test/api/post/" + num;
 
@@ -67,10 +67,15 @@ export const showPost = (num) => dispatch => {
     })
     .then((response) => response.json())
     .then((post) => {
-        console.log(post);
+        
+        let data={
+            post: post,
+            comp: comp
+        };
+        
         dispatch({
             type: SHOW_POST,
-            payload: post
+            payload: data
         });
 
     })
@@ -107,6 +112,38 @@ export const updatePost = (data) => dispatch => {
         console.log("Server says: ", data);
         dispatch({
             type: UPDATE_POST,
+            payload: data
+        });
+
+    })
+    .catch((error) => {
+            console.error('Error:', error);
+    });
+
+}
+
+export const deletePost = (postId) => dispatch => {
+
+    let url = "http://LaravelPassportApi.test/api/post/" + postId;
+
+    console.log("action-postId: ", postId);
+    fetch(url, {
+        method: 'DELETE',
+        crossDomain : true,
+        headers: {
+            'Content-Type': 'application/json',
+            "Accept": 'application/json',
+        },
+    })
+    .then((response) => {
+
+        return response.json();
+
+    })
+    .then((data) => {
+        console.log("Server says: ", data);
+        dispatch({
+            type: DELETE_POST,
             payload: data
         });
 

@@ -11,7 +11,8 @@ class ShowPost extends Component {
 
         this.state = {
             name: null,
-            value: null
+            value: null,
+            showPost: null
         };
         this.onChange = this.onChange.bind(this);
     }
@@ -20,14 +21,25 @@ class ShowPost extends Component {
         
         this.setState({
             name: e.target.name,
-            value: e.target.value
+            value: e.target.value,
+            showPost: this.props.data.showPost
         });
+        this.props.showPost(e.target.value, "show");
 
-        this.props.showPost(e.target.value);
+    }
+
+    componentDidMount(){
+
+
+
     }
 
     render() {
+        //console.log();
         
+        let myComponent = this.props && this.props.data && this.props.data.component ? this.props.data.component : null;
+        console.log(myComponent);
+
         let posts = this.props.data.posts;
         let options = posts && posts.length>0 ? posts.map((item, i) => {
             
@@ -39,7 +51,7 @@ class ShowPost extends Component {
             {options}
         </select> : null;
 
-        let showPost = this.props.data.showPost;
+        let showPost = myComponent==="show" ? this.props.data.showPost : null;
         let post = showPost ? <div className="card">
             <div className="card-header">{showPost.title}</div>
             <div className="card-body">{showPost.body}</div>
@@ -64,6 +76,7 @@ ShowPost.propTypes = {
 
 const mapStateToProps = state => ({
     data: {
+        component: state.data.data.component,
         message: state.data.data.message,
         showPost: state.data.data.showPost,
         posts: state.data.data.posts

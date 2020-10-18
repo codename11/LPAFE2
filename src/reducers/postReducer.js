@@ -1,7 +1,8 @@
-import { FETCH_POSTS, NEW_POST, SHOW_POST, UPDATE_POST } from "../actions/types";
+import { FETCH_POSTS, NEW_POST, SHOW_POST, UPDATE_POST, DELETE_POST } from "../actions/types";
 
 const initialState = {
     data: {
+        component: null,
         message: null,
         posts: null,
         showPost: null,
@@ -18,6 +19,8 @@ const initialState = {
 
 let myState = null;
 let posts = null;
+let message = null;
+let component = null;
 
 export default function(state = initialState, action){
 
@@ -25,9 +28,10 @@ export default function(state = initialState, action){
 
         case FETCH_POSTS:
             
+            message = action.payload.message;
             myState = {
                 data: {
-                    message: action.payload.message,
+                    message: message,
                     posts: action.payload.posts,
                 }
             };
@@ -38,9 +42,11 @@ export default function(state = initialState, action){
         
             posts = state.data && state.data.posts && state.data.posts.length > 0 ? state.data.posts : null;
             let newPost = action.payload.post;
+            message = action.payload.message;
+
             myState = {
                 data: {
-                    message: action.payload.message,
+                    message: message,
                     posts: [...posts, newPost],
                 }
             };
@@ -49,12 +55,15 @@ export default function(state = initialState, action){
 
         case SHOW_POST:
             
-            let showPost = action.payload.post;
+            let showPost = action.payload.post.post;
             posts = state.data && state.data.posts && state.data.posts.length > 0 ? state.data.posts : null;
-
+            message = action.payload.message;
+            component = action.payload.comp;
+            
             myState = {
                 data: {
-                    message: action.payload.message,
+                    component: component,
+                    message: message,
                     showPost: showPost,
                     posts: [...posts],
                 }
@@ -65,7 +74,7 @@ export default function(state = initialState, action){
         case UPDATE_POST:
         
             let updatedPost = action.payload.post;
-            let message = action.payload.message;
+            message = action.payload.message;
             
             posts = state.data && state.data.posts && state.data.posts.length > 0 ? state.data.posts.map((item, i) => {
 
@@ -75,6 +84,28 @@ export default function(state = initialState, action){
 
             myState = {
                 data: {
+                    component: state.data.component,
+                    message: message,
+                    posts: [...posts],
+                }
+            };
+
+            return myState;
+
+        case DELETE_POST:
+    
+            let deletedPost = action.payload.post;
+            message = action.payload.message;
+            console.log(deletedPost);
+            posts = state.data && state.data.posts && state.data.posts.length > 0 ? state.data.posts.filter((item, i) => {
+
+                return item.id !== deletedPost.id;
+
+            }) : null;
+
+            myState = {
+                data: {
+                    component: state.data.component,
                     message: message,
                     posts: [...posts],
                 }

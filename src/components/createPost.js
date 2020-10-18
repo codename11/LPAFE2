@@ -46,12 +46,12 @@ class CreatePost extends Component {
 
                     <div className="form-group">
                         <label htmlFor="title">Title:</label>
-                        <input type="text" className="form-control" name="title" id="title" onChange={this.onChange} required/>
+                        <input type="text" className="form-control" name="title" id="title1" onChange={this.onChange} required/>
                     </div>
 
                     <div className="form-group">
                         <label htmlFor="body">Body:</label>
-                        <textarea className="form-control" rows="5" name="body" id="body" onChange={this.onChange} required></textarea>
+                        <textarea className="form-control" rows="5" name="body" id="body1" onChange={this.onChange} required></textarea>
                     </div>
 
                     <input className="btn btn-outline-primary" type="submit" value="Submit" />
