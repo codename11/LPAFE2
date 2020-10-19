@@ -28,12 +28,6 @@ class ShowPost extends Component {
 
     }
 
-    componentDidMount(){
-
-
-
-    }
-
     render() {
         //console.log();
         

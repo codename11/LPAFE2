@@ -1,4 +1,4 @@
-import { FETCH_POSTS, NEW_POST, SHOW_POST, UPDATE_POST, DELETE_POST } from "../actions/types";
+import { FETCH_POSTS, NEW_POST, SHOW_POST, UPDATE_POST, DELETE_POST} from "../actions/types";
 
 const initialState = {
     data: {
@@ -10,10 +10,6 @@ const initialState = {
         deletePost: null,
         postUpdated: null,
         postDeleted: null,
-    },
-    auth: {
-        message: null,
-        access_token: null,
     }
 };
 

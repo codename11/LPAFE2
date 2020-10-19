@@ -1,4 +1,4 @@
-import { FETCH_POSTS, NEW_POST, SHOW_POST, UPDATE_POST, DELETE_POST } from "./types";
+import { FETCH_POSTS, NEW_POST, SHOW_POST, UPDATE_POST, DELETE_POST} from "./types";
 
 export const listPosts = () => dispatch => {
     

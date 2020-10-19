@@ -6,6 +6,8 @@ import CreatePost from "./components/createPost";
 import ShowPost from "./components/showPost";
 import UpdatePost from "./components/updatePost";
 import DeletePost from "./components/deletePost";
+import Register from "./components/register";
+import Login from "./components/login";
 
 class App extends Component {
   render() {
@@ -18,6 +20,8 @@ class App extends Component {
         <ShowPost/>
         <UpdatePost/>
         <DeletePost/>
+        <Register/>
+        <Login/>
       </Provider>
 
     )
