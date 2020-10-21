@@ -40,8 +40,8 @@ class CreatePost extends Component {
     render() {
         
         return (
-            <div className="container">
-                <h3>Create</h3>
+
+            <div>
                 <form onSubmit={this.onSubmit}>
 
                     <div className="form-group">

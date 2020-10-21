@@ -30,9 +30,8 @@ class ShowPost extends Component {
 
     render() {
         //console.log();
-        
+        //console.log("Show: ", this.props);
         let myComponent = this.props && this.props.data && this.props.data.component ? this.props.data.component : null;
-        console.log(myComponent);
 
         let posts = this.props.data.posts;
         let options = posts && posts.length>0 ? posts.map((item, i) => {
@@ -53,8 +52,8 @@ class ShowPost extends Component {
         </div> : null;
         
         return (
-            <div className="container">
-                <h3>Show</h3>
+            <div>
+ 
                 {select}
                 {post}
 

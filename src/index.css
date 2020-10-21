@@ -13,6 +13,9 @@ code {
 }
 
 .container{
-  border-top: 1px solid red;
   margin-top: 10px;
+}
+
+.nav-link{
+  text-transform: capitalize;
 }

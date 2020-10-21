@@ -32,9 +32,6 @@ class DeletePost extends Component {
         e.preventDefault();
 
         let postId = e.target.elements[0].value;
-        
-        console.log(postId);
-
         this.props.deletePost(postId);
 
     }
@@ -43,7 +40,6 @@ class DeletePost extends Component {
         //console.log();
         
         let myComponent = this.props && this.props.data && this.props.data.component ? this.props.data.component : null;
-        console.log(myComponent);
 
         let postId = myComponent === "delete" && this.props && this.props.data && this.props.data.showPost ? this.props.data.showPost.id : (this.props && this.props.data && this.props.data.posts ? this.props.data.posts[0].id : null);
         
@@ -66,8 +62,7 @@ class DeletePost extends Component {
         </form> : null;
 
         return (
-            <div className="container">
-                <h3>Delete</h3>
+            <div>
                 
                 {select}
 

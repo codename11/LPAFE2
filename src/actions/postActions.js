@@ -16,7 +16,7 @@ export const listPosts = () => dispatch => {
             type: FETCH_POSTS,
             payload: posts
         });
-
+        
     })
     .catch((error) => {
         console.error('Error:', error);

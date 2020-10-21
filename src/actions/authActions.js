@@ -51,7 +51,7 @@ export const login = (data) => dispatch => {
 
     })
     .then((data) => {
-        console.log(data);
+        
         dispatch({
             type: LOGIN,
             payload: data

@@ -8,6 +8,8 @@ const initialState = {
 };
 
 let myState = null;
+let user = null;
+let access_token = null;
 
 export default function(state = initialState, action){
 
@@ -15,8 +17,8 @@ export default function(state = initialState, action){
 
         case REGISTER:
             
-            let user = action.payload.user;
-            let access_token = action.payload.access_token;
+            user= action.payload.user;
+            access_token = action.payload.access_token;
 
             myState = {
                 auth: {
@@ -28,18 +30,18 @@ export default function(state = initialState, action){
             return myState;
 
         case LOGIN:
-            console.log("LOGIN payload: ", action.payload);
-            /*let user = action.payload.user;
-            let access_token = action.payload.access_token;
+            
+            user = action.payload.user;
+            access_token = action.payload.access_token;
 
             myState = {
                 auth: {
                     user: user,
                     access_token: access_token
-                },
-            };*/
+                }
+            };
 
-            return state;
+            return myState;
 
         default:
             return state;

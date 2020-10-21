@@ -39,12 +39,12 @@ class Register extends Component {
     }
 
     render() {
-        
+        //console.log();
+        //console.log("Register: ", this.props);
         return (
             
-            <div className="container">
+            <div>
 
-                <h3>Register</h3>
                 <form onSubmit={this.onSubmit}>
 
                     <div className="form-group">

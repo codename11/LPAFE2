@@ -13,7 +13,7 @@ class ListPosts extends Component {
     }
 
     render() {
-        
+        console.log("list: ", this.props);
         let posts = this.props && this.props.data && this.props.data.posts && this.props.data.posts.length>0 ? this.props.data.posts.map((item, i) => {
 
             return <div className="card cardWide" key={i}>
@@ -25,10 +25,13 @@ class ListPosts extends Component {
         }) : null;
 
         return (
-            <div className="container">
-                <h3>List</h3>
+
+            <div>
+
                 {posts}
+                
             </div>
+
         );
         
     }
@@ -41,8 +44,8 @@ ListPosts.propTypes = {
 const mapStateToProps = state => ({
     data: {
         message: state.data.data.message,
-        posts: state.data.data.posts
-    },
+        posts: state.data.data.posts,
+    }
 });
 
 export default connect(mapStateToProps, { listPosts })(ListPosts);

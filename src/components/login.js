@@ -37,11 +37,11 @@ class Login extends Component {
     }
 
     render() {
+        
         return (
  
-            <div className="container">
+            <div>
 
-                <h3>Login</h3>
                 <form onSubmit={this.onSubmit}>
 
                     <div className="form-group">
@@ -66,13 +66,13 @@ Login.propTypes = {
     login: PropTypes.func.isRequired,
 };
 
-/*const mapStateToProps = (state) =>{ 
+const mapStateToProps = (state) =>{ 
 
     return ({auth: state.auth.auth,});
 
-};*/
+};
 
-export default connect(null, { login })(Login);
+export default connect(mapStateToProps, { login })(Login);
 /*
 tttttttt
 tttttttt@gmail.com

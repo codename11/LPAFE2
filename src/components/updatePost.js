@@ -47,7 +47,6 @@ class UpdatePost extends Component {
         //console.log();
         
         let myComponent = this.props && this.props.data && this.props.data.component ? this.props.data.component : null;
-        console.log(myComponent);
 
         let title = myComponent === "update" && this.props && this.props.data && this.props.data.showPost ? this.props.data.showPost.title : (this.props && this.props.data && this.props.data.posts ? this.props.data.posts[0].title : null);
         let body = myComponent === "update" && this.props && this.props.data && this.props.data.showPost ? this.props.data.showPost.body : (this.props && this.props.data && this.props.data.posts ? this.props.data.posts[0].body : null);
@@ -82,8 +81,8 @@ class UpdatePost extends Component {
         </form>;
 
         return (
-            <div className="container">
-                <h3>Update</h3>
+            <div>
+                
                 {select}
 
                 {updateForm}
