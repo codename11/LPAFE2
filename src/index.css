@@ -19,3 +19,8 @@ code {
 .nav-link{
   text-transform: capitalize;
 }
+
+.card{
+  width: 100%;
+  text-align: center;
+}

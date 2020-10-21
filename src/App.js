@@ -81,7 +81,7 @@ class App extends Component {
     
   }
 
-  UNSAFE_componentWillReceiveProps(nextProps){
+  /*UNSAFE_*/componentWillReceiveProps(nextProps){
 
     let token = nextProps.auth.access_token;
     if(nextProps.auth.access_token){
@@ -97,8 +97,8 @@ class App extends Component {
 
   render() {
     //console.log();
-    console.log("AppProps: ", this.props);
-    console.log("AppState: ", this.state);
+    /*console.log("AppProps: ", this.props);
+    console.log("AppState: ", this.state);*/
 
     let access_token = this.props.auth.access_token;
     let elemIndex = this.state.elemIndex;

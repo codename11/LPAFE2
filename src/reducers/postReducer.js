@@ -26,6 +26,7 @@ export default function(state = initialState, action){
             
             message = action.payload.message;
             myState = {
+                ...state,
                 data: {
                     message: message,
                     posts: action.payload.posts,
@@ -41,6 +42,7 @@ export default function(state = initialState, action){
             message = action.payload.message;
 
             myState = {
+                ...state,
                 data: {
                     message: message,
                     posts: [...posts, newPost],
@@ -57,6 +59,7 @@ export default function(state = initialState, action){
             component = action.payload.comp;
             
             myState = {
+                ...state,
                 data: {
                     component: component,
                     message: message,
@@ -79,6 +82,7 @@ export default function(state = initialState, action){
             }) : null;
 
             myState = {
+                ...state,
                 data: {
                     component: state.data.component,
                     message: message,
@@ -100,6 +104,7 @@ export default function(state = initialState, action){
             }) : null;
 
             myState = {
+                ...state,
                 data: {
                     component: state.data.component,
                     message: message,
