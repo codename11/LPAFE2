@@ -16,15 +16,20 @@ List all posts:
 ![List](3.png)
 
 Show particular post, for this i used [carousel](https://www.npmjs.com/package/react-elastic-carousel).
-![Show](4.png)
+![Show1](4.png)
+
+![Show2](5.png)
 
 Create new post:
-![Create](5.png)
+![Create](6.png)
 
 Update existing post:
-![Update](6.png)
+![Update1](7.png)
+
+![Update2](8.png)
 
 Delete post:
-![Delete](7.png)
+![Delete1](9.png)
+![Delete2](10.png)
 
 As you can, visually is simple, still all conventions of React and Redux is up to the par and letter.
